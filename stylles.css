@@ -2,11 +2,6 @@ nav {
     background-color: darkcyan;
 }
 
-nav a {
-    text-decoration: none;
-    color: white;
-}
-
 nav a:hover {
     text-decoration: none;
     color: black;
