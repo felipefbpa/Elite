@@ -35,3 +35,9 @@ body {
 footer {
     background-color: darkcyan;
 }
+
+footer p {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+}
