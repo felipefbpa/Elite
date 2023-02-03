@@ -34,15 +34,17 @@ body {
 
 #apresentacao {
     height: 300px;
-    background-color: cadetblue;
+    background: url(imagens/capa2.jpg) no-repeat;
+    background-position: 10% 60%;
+    opacity: 0.7;
+    background-size: cover;
     color: white;
     font-weight: bold;
 }
 
-#saibamais {
-    background-color: darkcyan;
+.texto-apresentacao {
+    background-color: rgba(0, 139, 139, 0.562);
     color: white;
-    transition: 0.3s;
 }
 
 .container-fluid .card {
