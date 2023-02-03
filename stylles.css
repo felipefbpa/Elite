@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
 nav {
     background-color: darkcyan;
 }
@@ -5,6 +12,18 @@ nav {
 nav a:hover {
     text-decoration: none;
     color: black;
+}
+
+nav ul li a {
+    font-size: 1.05em;
+}
+
+#nav-button a { 
+    border-radius: 10px;
+}
+
+#nav-button a:hover {
+    box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.295);
 }
 
 body {
@@ -26,17 +45,26 @@ body {
     transition: 0.3s;
 }
 
-#saibamais:hover {
-    scale: 1.1;
+.container-fluid .card {
+    color: darkcyan;
+    margin: 15px;
+    height: 320px;
+    width: 300px;
+    text-align: center;
+    background-color: azure;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.171);
 }
 
-.borda-carrossel {
-    border: 7px solid darkcyan;
+.icon {
+    width: 65px;
+    height: 65px;
+    margin-bottom: 5px;
 }
 
-.fonte-h2-carrossel {
-    font-family: Arial, Helvetica, sans-serif;
-    text-transform: uppercase;
+.container-fluid .card .card-text {
+    font-size: .85em;
+    font-weight: 400;
+    color: black;
 }
 
 footer {
@@ -44,7 +72,6 @@ footer {
 }
 
 footer p {
-    font-size: 1.2em;
-    font-weight: bold;
+    font-size: .85em;
     color: white;
 }
