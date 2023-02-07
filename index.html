@@ -18,6 +18,9 @@
   <!-- Estilos customizados -->
   <link rel="stylesheet" href="stylles.css">
 
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <!-- Favicon -->
   <link rel="shortcut icon" href="imagens/favicon-32x32.png">
 
@@ -118,9 +121,9 @@
 
   <footer class="p-1"><!-- Incio footer -->
     
-    <div class="row d-flex justify-content-sm-start align-items-center ml-5 mr-0 mt-2">
+    <div class="row ml-3 mr-0 mt-2 mb-1 d-flex justify-content-sm-start align-items-center">
       <div>
-        <h1>Duvidas frequentes</h1>
+        <h1 class="ml-4">Duvidas frequentes</h1>
       </div>
     </div>
 
@@ -129,13 +132,18 @@
         <div class="mb-3 ml-4 w-100">
           <div id="accordion">
 
-            <div class="card">
-              <div class="card-header" id="headingOne">
+            <div class="card mb-2">
+              <div class="card-header duvidas-frequentes" id="headingOne">
                 <h5 class="mb-0">
-                  <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                  <a class="btn text-docation-footer" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
                     aria-controls="collapseOne">
                     Como faço um orçamento pelo site?
-                  </button>
+                  </a>
+
+                  <a class="btn btn-outline-dark float-right mr-1" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                  aria-controls="collapseOne">
+                    <i class="fa-solid fa-angle-down"></i>
+                  </a>
                 </h5>
               </div>
               <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
@@ -150,13 +158,17 @@
               </div>
             </div>
 
-            <div class="card">
-              <div class="card-header" id="headingTwo">
+            <div class="card mb-2">
+              <div class="card-header duvidas-frequentes" id="headingTwo">
                 <h5 class="mb-0">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                  <a class="btn collapsed" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="false" aria-controls="collapseTwo">
                     Collapsible Group Item #2
-                  </button>
+                  </a>
+                  <a class="btn btn-outline-dark float-right mr-1" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+                  aria-controls="collapseTwo">
+                    <i class="fa-solid fa-angle-down"></i>
+                  </a>
                 </h5>
               </div>
               <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
@@ -171,13 +183,17 @@
               </div>
             </div>
 
-            <div class="card">
-              <div class="card-header" id="headingThree">
+            <div class="card mb-2">
+              <div class="card-header duvidas-frequentes" id="headingThree">
                 <h5 class="mb-0">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
+                  <a class="btn collapsed" data-toggle="collapse" data-target="#collapseThree"
                     aria-expanded="false" aria-controls="collapseThree">
                     Collapsible Group Item #3
-                  </button>
+                  </a>
+                  <a class="btn btn-outline-dark float-right mr-1" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true"
+                  aria-controls="collapseThree">
+                    <i class="fa-solid fa-angle-down"></i>
+                  </a>
                 </h5>
               </div>
               <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
@@ -192,13 +208,17 @@
               </div>
             </div>
 
-            <div class="card">
-              <div class="card-header" id="headingFour">
+            <div class="card mb-2">
+              <div class="card-header duvidas-frequentes" id="headingFour">
                 <h5 class="mb-0">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour"
+                  <a class="btn collapsed" data-toggle="collapse" data-target="#collapseFour"
                     aria-expanded="false" aria-controls="collapseFour">
                     Collapsible Group Item #4
-                  </button>
+                  </a>
+                  <a class="btn btn-outline-dark float-right mr-1" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true"
+                  aria-controls="collapseFour">
+                    <i class="fa-solid fa-angle-down"></i>
+                  </a>
                 </h5>
               </div>
               <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
@@ -213,13 +233,17 @@
               </div>
             </div>
 
-            <div class="card">
-              <div class="card-header" id="headingFive">
+            <div class="card mb-2">
+              <div class="card-header duvidas-frequentes" id="headingFive">
                 <h5 class="mb-0">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive"
+                  <a class="btn collapsed" data-toggle="collapse" data-target="#collapseFive"
                     aria-expanded="false" aria-controls="collapseFive">
                     Collapsible Group Item #5
-                  </button>
+                  </a>
+                  <a class="btn btn-outline-dark float-right mr-1" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true"
+                  aria-controls="collapseFive">
+                    <i class="fa-solid fa-angle-down"></i>
+                  </a>
                 </h5>
               </div>
               <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">

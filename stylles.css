@@ -74,6 +74,11 @@ footer {
     background-color: darkcyan;
 }
 
+.duvidas-frequentes {
+    background-color: azure;
+    padding: 10px;
+}
+
 footer h1 {
     color: white;
 }
