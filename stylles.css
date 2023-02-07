@@ -74,6 +74,10 @@ footer {
     background-color: darkcyan;
 }
 
+footer h1 {
+    color: white;
+}
+
 footer p {
     font-size: .85em;
     color: white;
