@@ -79,6 +79,18 @@ footer {
     padding: 10px;
 }
 
+[data-toggle="collapse"] {
+    cursor: pointer;
+}
+
+.card h5 a {
+    font-size: 18px;
+}
+
+#accordion .card {
+    word-break: break-word;
+}
+
 footer h1 {
     color: white;
 }
