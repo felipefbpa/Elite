@@ -18,7 +18,7 @@ nav ul li a {
     font-size: 1.05em;
 }
 
-#nav-button a { 
+#nav-button a {
     border-radius: 10px;
 }
 
@@ -74,22 +74,65 @@ footer {
     background-color: darkcyan;
 }
 
-.duvidas-frequentes {
-    background-color: azure;
-    padding: 10px;
-}
+/* INICIO DUVIDAS FREQUENTES */
 
-[data-toggle="collapse"] {
-    cursor: pointer;
-}
-
-.card h5 a {
+button.accordion {
+    width: 100%;
+    background-color: white;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: none;
+    outline: none;
+    text-align: left;
+    padding: 15px 20px;
     font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.2s linear;
 }
 
-#accordion .card {
-    word-break: break-word;
+.ultimo-item {
+    border-bottom: 1px solid black;
 }
+
+button.accordion:after {
+    content: '\f103';
+    font-family: "fontawesome";
+    font-size: 18px;
+    float: right;
+}
+
+button.accordion.is-open:after {
+    content: '\f102';
+}
+
+button.accordion:hover,
+button.accordion.is-open {
+    background-color: azure;
+}
+
+.accordion-content {
+    background-color: white;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-in-out;
+}
+
+.accordion-content p{
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-size: .85em;
+    font-weight: 400;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* FIM DUVIDAS FREQUENTES */
 
 footer h1 {
     color: white;
