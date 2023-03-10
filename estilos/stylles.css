@@ -34,7 +34,7 @@ body {
 
 #apresentacao {
     height: 300px;
-    background: url(imagens/capa2.jpg) no-repeat;
+    background: url(../imagens/capa2.jpg) no-repeat;
     background-position: 10% 60%;
     opacity: 0.7;
     background-size: cover;
@@ -123,7 +123,7 @@ button.accordion.is-open {
     transition: max-height 0.2s ease-in-out;
 }
 
-.accordion-content p{
+.accordion-content p {
     color: black;
     font-family: 'Roboto', sans-serif;
     font-size: .85em;
@@ -141,4 +141,32 @@ footer h1 {
 footer p {
     font-size: .85em;
     color: white;
+}
+
+/* INICIO FORMULARIO */
+
+form {
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    form>* {
+        width: 50% !important;
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width: 767px) {
+    form>* {
+        width: 85% !important;
+        margin: 0 auto;
+    }
+}
+
+form label {
+    display: block;
+    margin: 0 auto;
+}
+
+form input {
+    padding: 10px;
 }
