@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faça seu orçamento</title>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
 
     <!-- Estilos customizados -->
     <link rel="stylesheet" href="estilos/stylles.css">
@@ -31,7 +32,7 @@
                 <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-principal">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="nav-principal">
+                <div class="collapse navbar-collapse justify-content-end" id="nav-principal">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
                             <a href="index.html" class="nav-link">Home</a>
@@ -48,40 +49,57 @@
         </nav>
     </header><!-- Final barra de navegação -->
 
-    <div class="d-flex h-75 flex-column align-items-center mt-3 mb-5 justify-content-md-center">
-        <!-- Inicio Formulario -->
+    <div class="d-flex h-75 flex-column align-items-center mt-3 mb-5 justify-content-md-center"><!-- Inicio Formulario -->
+        
 
         <h1 class="text-center">Faça seu orçamento agora mesmo!</h1>
 
         <form class="mt-3">
             <div class="form-group">
                 <label for="nome">Nome</label>
-                <input class="form-control" type="text" name="nome" id="nome" placeholder="Teste" autofocus required>
+                <input class="form-control" type="text" name="nome" id="nome" placeholder="Nome e sobrenome" autofocus
+                    required>
             </div>
-            <div class="form-group">
+            <div class="form-group mt-3">
                 <label for="email">Email</label>
-                <input class="form-control" type="email" name="email" id="nome" placeholder="Teste" required>
+                <input class="form-control" type="email" name="email" id="nome" placeholder="exemplo@exemplo.com.br"
+                    required>
             </div>
-            <div class="form-group">
-                <label for="idade">Descreva sua idéia</label>
-                <input class="form-control" type="text" id="ideia" placeholder="Teste" required>
+            <div class="form-group mt-3">
+                <label for="idade">Telefone</label>
+                <input class="form-control" type="text" id="ideia" placeholder="(XX) xxxxx-xxxx" required>
             </div>
-            <div class="form-group">
-                <label for="idade">Teste</label>
-                <input class="form-control" type="text" id="teste" placeholder="Teste" required>
+            <div class="form-group mt-3">
+                <label for="textarea">Nos conte mais sua idéia</label>
+                <textarea class="form-control" id="textarea" rows="3"
+                    placeholder="Descreva suas exigencias para seu projeto" required></textarea>
             </div>
-            <div class="form-group">
-                <label for="idade">Teste</label>
-                <input class="form-control" type="text" id="teste" placeholder="Teste" required>
-            </div>
-            <div class="form-group">
-                <label for="url">Descreva as medidas</label>
-                <input class="form-control" type="text" id="medida" placeholder="Teste" required>
-            </div>
-            <div class="form-group">
-                <label for="data">Data de entrega</label>
+            <div class="form-group mt-3">
+                <label for="data">Pra quando você precisa</label>
                 <input class="form-control" type="date" id="data" placeholder="Teste" required>
             </div>
+
+            <p class="mt-3">Marque os serviços adicionais</p>
+
+            <p>
+                <input type="checkbox" name="bike" value="on"> Entrega
+            </p>
+
+            <p>
+                <input type="checkbox" name="car" value="on"> Instalação
+            </p>
+
+            <div class="form-group">
+                <label for="nome">Caso tenha marcado algum a cima, digite o endereço completo</label>
+                <input class="form-control" type="text" name="nome" id="nome" placeholder="Endereço completo">
+            </div>
+
+            <p class="mt-3">Agora por fim, faça upload dos arquivos</p>
+
+            <div class="input-group mb-3">
+                <input type="file" class="form-control" id="inputGroupFile02">
+            </div>
+
             <div class="mt-3 w-100">
                 <button type="submit" class="btn btn-primary w-25 d-block  mx-auto">Enviar</button>
             </div>
