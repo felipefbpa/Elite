@@ -1,5 +1,5 @@
 // Comportamento icone duvidas frequentes
-let accordions = document.querySelectorAll(".accordion");
+let accordions = document.querySelectorAll(".accordion")
 
 for (let i = 0; i < accordions.length; i++) {
   accordions[i].addEventListener('click', function () {
@@ -11,7 +11,7 @@ for (let i = 0; i < accordions.length; i++) {
       content.style.maxHeight = null;
     } else {
       // accordion está fechado no momento, então abra-o
-      content.style.maxHeight = content.scrollHeight + "px";
+      content.style.maxHeight = content.scrollHeight + "px"
     }
   })
 }
@@ -47,6 +47,25 @@ telefone.addEventListener('keypress', () => {
   }
 
 })
+
+//Entrega e instalação - MARQUE UMA OPÇÃO
+
+let servicos = document.querySelectorAll('input[name="servico"]')
+let enviar = document.querySelector('#submit')
+let styleAlert = document.querySelector('.styleAlert')  
+
+function checagem() {
+  let primeiraOpcao = servicos [0].checked
+  let segundaOpcao = servicos [1].checked
+
+  if (!primeiraOpcao && !segundaOpcao){
+    styleAlert.style.display = 'block'
+  } else {
+    styleAlert.style.display = 'none'
+  }
+}
+
+enviar.addEventListener('click', checagem)
 
 
 

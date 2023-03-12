@@ -3,6 +3,8 @@
 * {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
+    -webkit-animation-fill-mode: none !important;
+    animation-fill-mode: none !important;
 }
 
 nav {
@@ -56,6 +58,13 @@ body {
     background-color: azure;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.171);
     overflow: auto;
+}
+
+.card { 
+    transition: 0.8s; 
+}
+.card:hover, .card:active { 
+    transform: scale(1.1); 
 }
 
 .icon {
@@ -168,10 +177,18 @@ form {
 }
 
 form label {
-    display: block;
     margin: 0 auto;
 }
 
 form input {
     padding: 10px;
+}
+
+.styleAlert{
+    width: 180px;
+    margin-top: 10px;
+    padding: 10px;
+    text-align: center;
+    font-weight: 550;
+    display: none;
 }
