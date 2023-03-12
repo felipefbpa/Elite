@@ -43,6 +43,23 @@ body {
     background-color: white;
 }
 
+.quem-somos-fundo {
+    background: #008b8b17;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px black;
+    border-radius: 30px;
+}
+
+.h1-fonte-quem-somos {
+    font-weight: 550;
+}
+
+.p-fonte-quem-somos {
+    font-size: 1.1em;
+    padding: 0 25px;
+}
+
 #apresentacao {
     height: 300px;
     background: url(../imagens/capa2.jpg) no-repeat;
