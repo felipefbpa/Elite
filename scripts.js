@@ -1,16 +1,52 @@
-var accordions = document.getElementsByClassName("accordion");
+// Comportamento icone duvidas frequentes
+let accordions = document.querySelectorAll(".accordion");
 
-for (var i = 0; i < accordions.length; i++) {
-  accordions[i].onclick = function() {
+for (let i = 0; i < accordions.length; i++) {
+  accordions[i].addEventListener('click', function () {
     this.classList.toggle('is-open');
 
-    var content = this.nextElementSibling;
+    let content = this.nextElementSibling;
     if (content.style.maxHeight) {
-      // accordion is currently open, so close it
+      // accordion está aberto no momento, então feche-o
       content.style.maxHeight = null;
     } else {
-      // accordion is currently closed, so open it
+      // accordion está fechado no momento, então abra-o
       content.style.maxHeight = content.scrollHeight + "px";
     }
-  }
+  })
 }
+
+// FORMULARIO
+
+//Mascara de telefone
+
+const telefone = document.querySelector('#telefone')
+
+telefone.addEventListener('click', () => {
+  telefone.value = '('
+
+})
+
+telefone.addEventListener('focusout', () => {
+  if (telefone.value == '(') {
+
+    telefone.value = ''
+  }
+
+})
+
+telefone.addEventListener('keypress', () => {
+  let telefoneComprimento = telefone.value.length
+
+  if (telefoneComprimento === 3) {
+    telefone.value = telefone.value + ') '
+  }
+
+  if (telefoneComprimento === 10) {
+    telefone.value = telefone.value + '-'
+  }
+
+})
+
+
+
