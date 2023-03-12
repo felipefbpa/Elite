@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
 
+* {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    -webkit-animation-fill-mode: none !important;
+    animation-fill-mode: none !important;
+}
+
 .prevent-select {
     -webkit-user-select: none;
     /* Safari */
