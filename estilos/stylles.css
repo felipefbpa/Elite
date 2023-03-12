@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
 
-* {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    -webkit-animation-fill-mode: none !important;
-    animation-fill-mode: none !important;
+.prevent-select {
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
 }
 
 nav {
@@ -60,11 +62,13 @@ body {
     overflow: auto;
 }
 
-.card { 
-    transition: 0.8s; 
+.card {
+    transition: 0.8s;
 }
-.card:hover, .card:active { 
-    transform: scale(1.1); 
+
+.card:hover,
+.card:active {
+    transform: scale(1.1);
 }
 
 .icon {
@@ -184,7 +188,7 @@ form input {
     padding: 10px;
 }
 
-.styleAlert{
+.styleAlert {
     width: 180px;
     margin-top: 10px;
     padding: 10px;

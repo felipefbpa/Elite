@@ -18,7 +18,7 @@ for (let i = 0; i < accordions.length; i++) {
 
 // FORMULARIO
 
-//Mascara de telefone
+//Mascara de telefone e bloqueio de caracteres diferentes de numeros
 
 const telefone = document.querySelector('#telefone')
 
@@ -35,8 +35,25 @@ telefone.addEventListener('focusout', () => {
 
 })
 
-telefone.addEventListener('keypress', () => {
+telefone.addEventListener('keydown', (event) => {
   let telefoneComprimento = telefone.value.length
+  if (telefoneComprimento === 1) {
+    if (event.keyCode === 8) {
+      event.preventDefault()
+      return false
+    }
+  }
+
+})
+
+telefone.addEventListener('keypress', (event) => {
+  let telefoneComprimento = telefone.value.length
+
+  let caracteresPermitidos = String.fromCharCode(event.which)
+  if ("1234567890".indexOf(caracteresPermitidos) < 0) {
+    event.preventDefault()
+    return false;
+  }
 
   if (telefoneComprimento === 3) {
     telefone.value = telefone.value + ') '
@@ -52,13 +69,13 @@ telefone.addEventListener('keypress', () => {
 
 let servicos = document.querySelectorAll('input[name="servico"]')
 let enviar = document.querySelector('#submit')
-let styleAlert = document.querySelector('.styleAlert')  
+let styleAlert = document.querySelector('.styleAlert')
 
 function checagem() {
-  let primeiraOpcao = servicos [0].checked
-  let segundaOpcao = servicos [1].checked
+  let primeiraOpcao = servicos[0].checked
+  let segundaOpcao = servicos[1].checked
 
-  if (!primeiraOpcao && !segundaOpcao){
+  if (!primeiraOpcao && !segundaOpcao) {
     styleAlert.style.display = 'block'
   } else {
     styleAlert.style.display = 'none'
