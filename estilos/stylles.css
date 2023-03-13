@@ -152,6 +152,10 @@ button.accordion.is-open {
     background-color: azure;
 }
 
+button.accordion.is-open {
+    font-weight: bold;
+}
+
 .accordion-content {
     background-color: white;
     border-left: 1px solid black;
@@ -165,10 +169,19 @@ button.accordion.is-open {
 .accordion-content p {
     color: black;
     font-family: 'Roboto', sans-serif;
-    font-size: .85em;
+    font-size: 1.05em;
     font-weight: 400;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.accordion-content p a {
+    text-decoration: none;
+}
+
+.accordion-content p a:hover {
+    color: darkcyan;
+    text-decoration: underline;
 }
 
 /* FIM DUVIDAS FREQUENTES */
