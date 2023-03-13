@@ -71,7 +71,9 @@ body {
 }
 
 .texto-apresentacao {
-    background-color: rgba(0, 139, 139, 0.562);
+    border-radius: 10px;
+    background-color: rgba(0, 139, 139, 0.1);
+    padding: 4px;
     color: white;
 }
 
