@@ -184,14 +184,18 @@ button.accordion.is-open {
     text-decoration: underline;
 }
 
-/* FIM DUVIDAS FREQUENTES */
+/* INICIO FOOTER */
+
+footer .estilo-icone {
+    color: white;
+}
 
 footer h1 {
     color: white;
 }
 
 footer p {
-    font-size: .85em;
+    font-size: .95em;
     color: white;
 }
 
