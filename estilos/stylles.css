@@ -222,6 +222,10 @@ form {
         width: 85% !important;
         margin: 0 auto;
     }
+
+    #bodyQuemSomos {
+        height: 75%;
+    }
 }
 
 form label {
