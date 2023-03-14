@@ -106,35 +106,44 @@ function validacao() {
 
   if (campoNome.value.length === 0) {
     eValido = false
-    campoNome.classList.toggle('invalid')
+    campoNome.classList.add('invalid')
+    campoNome.classList.remove('valid')
   } else {
-    campoNome.classList.toggle('valid')
+    campoNome.classList.remove('invalid')
+    campoNome.classList.add('valid')
   }
 
   if (campoEmail.value.length === 0 || !temArromba) {
     eValido = false
-    campoEmail.classList.toggle('invalid')
+    campoEmail.classList.add('invalid')
+    campoEmail.classList.remove('valid')
   }
 
   if (campoTelefone.value.length === 0) {
     eValido = false
-    campoTelefone.classList.toggle('invalid')
+    campoTelefone.classList.add('invalid')
+    campoTelefone.classList.remove('valid')
   } else {
-    campoTelefone.classList.toggle('valid')
+    campoTelefone.classList.remove('invalid')
+    campoTelefone.classList.add('valid')
   }
 
   if (campoTexto.value.length === 0) {
     eValido = false
-    campoTexto.classList.toggle('invalid')
+    campoTexto.classList.add('invalid')
+    campoTexto.classList.remove('valid')
   } else {
-    campoTexto.classList.toggle('valid')
+    campoTexto.classList.remove('invalid')
+    campoTexto.classList.add('valid')
   }
 
   if (campoEndereco.value.length === 0) {
     eValido = false
-    campoEndereco.classList.toggle('invalid')
+    campoEndereco.classList.add('invalid')
+    campoEndereco.classList.remove('valid')
   } else {
-    campoEndereco.classList.toggle('valid')
+    campoEndereco.classList.remove('invalid')
+    campoEndereco.classList.add('valid')
   }
 
   if (!eValido) {
@@ -149,7 +158,8 @@ function validacao() {
   //VALIDAÇÃO DE EMAIL
 
   if (temArromba) {
-    campoEmail.classList.toggle('valid')
+    campoEmail.classList.add('invalid')
+    campoEmail.classList.remove('valid')
   }
 
   //
