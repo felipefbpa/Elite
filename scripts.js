@@ -49,10 +49,11 @@ telefone.addEventListener('keydown', (event) => {
 telefone.addEventListener('keypress', (event) => {
   let telefoneComprimento = telefone.value.length
 
-  let caracteresPermitidos = String.fromCharCode(event.which)
-  if ("1234567890".indexOf(caracteresPermitidos) < 0) {
+  let oQueOUsuarioDigitou = String.fromCharCode(event.which)
+  let caracteresPermitidos = "1234567890"
+  if (caracteresPermitidos.indexOf(oQueOUsuarioDigitou) < 0) {
     event.preventDefault()
-    return false;
+    return false
   }
 
   if (telefoneComprimento === 3) {
@@ -93,44 +94,70 @@ let textarea = document.querySelectorAll('textarea')
 function validacao() {
 
   console.log('teste')
-  
-  let primeiraOpcao = inputsCampos[0]
-  let segundaOpcao = inputsCampos[1]
-  let terceiraOpcao = inputsCampos[2]
-  let quartaOpcao = textarea[0]
-  let quintaOpcao = inputsCampos[5]
 
-  if (primeiraOpcao.value.length === 0) {
-    primeiraOpcao.classList += ' invalid' 
+  let campoNome = inputsCampos[0]
+  let campoEmail = inputsCampos[1]
+  let campoTelefone = inputsCampos[2]
+  let campoTexto = textarea[0]
+  let campoEndereco = inputsCampos[5]
+  let arroba = '@'
+  let temArromba = campoEmail.value.includes(arroba)
+  let eValido = true
+
+  if (campoNome.value.length === 0) {
+    eValido = false
+    campoNome.classList.toggle('invalid')
   } else {
-    primeiraOpcao.classList += ' valid' 
+    campoNome.classList.toggle('valid')
   }
 
-  if (segundaOpcao.value.length === 0) {
-    segundaOpcao.classList += ' invalid'
-  } else {
-    segundaOpcao.classList += ' valid'
+  if (campoEmail.value.length === 0 || !temArromba) {
+    eValido = false
+    campoEmail.classList.toggle('invalid')
   }
 
-  if (terceiraOpcao.value.length === 0) {
-    terceiraOpcao.classList += ' invalid'
+  if (campoTelefone.value.length === 0) {
+    eValido = false
+    campoTelefone.classList.toggle('invalid')
   } else {
-    terceiraOpcao.classList += ' valid'
+    campoTelefone.classList.toggle('valid')
   }
 
-  if (quartaOpcao.value.length === 0) {
-    quartaOpcao.classList += ' invalid'
+  if (campoTexto.value.length === 0) {
+    eValido = false
+    campoTexto.classList.toggle('invalid')
   } else {
-    quartaOpcao.classList += ' valid'
+    campoTexto.classList.toggle('valid')
   }
 
-  if (quintaOpcao.value.length === 0) {
-    quintaOpcao.classList += ' invalid'
+  if (campoEndereco.value.length === 0) {
+    eValido = false
+    campoEndereco.classList.toggle('invalid')
   } else {
-    quintaOpcao.classList += ' valid'
+    campoEndereco.classList.toggle('valid')
   }
+
+  if (!eValido) {
+    swal({
+      title: "Ops",
+      text: "Existem campos a serem preenchidos!",
+      icon: "error",
+      button: "OK",
+    });
+  }
+
+  //VALIDAÇÃO DE EMAIL
+
+  if (temArromba) {
+    campoEmail.classList.toggle('valid')
+  }
+
+  //
 
 }
 
 submitClick.addEventListener('click', validacao)
+
+
+
 
