@@ -7,7 +7,7 @@
     animation-fill-mode: none !important;
     scroll-behavior: smooth;
 }
-    
+
 .prevent-select {
     -webkit-user-select: none;
     /* Safari */
@@ -226,6 +226,20 @@ form {
     #bodyQuemSomos {
         height: 75%;
     }
+}
+
+.invalid {
+    border-radius: 10px;
+    border: 1px solid red;
+    display: block;
+    width: 100%;
+}
+
+.valid {
+    border-radius: 10px;
+    border: 1px solid green;
+    display: block;
+    width: 100%;
 }
 
 form label {

@@ -1,5 +1,5 @@
 // Comportamento icone duvidas frequentes
-let accordions = document.querySelectorAll(".accordion")
+let accordions = document.querySelectorAll('.accordion')
 
 for (let i = 0; i < accordions.length; i++) {
   accordions[i].addEventListener('click', function () {
@@ -22,7 +22,7 @@ for (let i = 0; i < accordions.length; i++) {
 
 const telefone = document.querySelector('#telefone')
 
-telefone.addEventListener('click', () => {
+telefone.addEventListener('focus', () => {
   telefone.value = '('
 
 })
@@ -84,5 +84,53 @@ function checagem() {
 
 enviar.addEventListener('click', checagem)
 
+//VALIDAÇÃO DE FORMULARIO
 
+let inputsCampos = document.querySelectorAll('input')
+let submitClick = document.querySelector('#submit')
+let textarea = document.querySelectorAll('textarea')
+
+function validacao() {
+
+  console.log('teste')
+  
+  let primeiraOpcao = inputsCampos[0]
+  let segundaOpcao = inputsCampos[1]
+  let terceiraOpcao = inputsCampos[2]
+  let quartaOpcao = textarea[0]
+  let quintaOpcao = inputsCampos[5]
+
+  if (primeiraOpcao.value.length === 0) {
+    primeiraOpcao.classList += ' invalid' 
+  } else {
+    primeiraOpcao.classList += ' valid' 
+  }
+
+  if (segundaOpcao.value.length === 0) {
+    segundaOpcao.classList += ' invalid'
+  } else {
+    segundaOpcao.classList += ' valid'
+  }
+
+  if (terceiraOpcao.value.length === 0) {
+    terceiraOpcao.classList += ' invalid'
+  } else {
+    terceiraOpcao.classList += ' valid'
+  }
+
+  if (quartaOpcao.value.length === 0) {
+    quartaOpcao.classList += ' invalid'
+  } else {
+    quartaOpcao.classList += ' valid'
+  }
+
+  if (quintaOpcao.value.length === 0) {
+    quintaOpcao.classList += ' invalid'
+  } else {
+    quintaOpcao.classList += ' valid'
+  }
+
+}
+
+submitClick.addEventListener('click', validacao)
 
