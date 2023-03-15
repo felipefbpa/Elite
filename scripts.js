@@ -72,26 +72,15 @@ let servicos = document.querySelectorAll('input[name="servico"]')
 let enviar = document.querySelector('#submit')
 let styleAlert = document.querySelector('.styleAlert')
 
-function checagem() {
-  let primeiraOpcao = servicos[0].checked
-  let segundaOpcao = servicos[1].checked
-
-  if (!primeiraOpcao && !segundaOpcao) {
-    styleAlert.style.display = 'block'
-  } else {
-    styleAlert.style.display = 'none'
-  }
-}
-
-enviar.addEventListener('click', checagem)
-
 //VALIDAÇÃO DE FORMULARIO
 
 let inputsCampos = document.querySelectorAll('input')
 let submitClick = document.querySelector('#submit')
 let textarea = document.querySelectorAll('textarea')
 
-function validacao() {
+async function validacao(event) {
+
+  event.preventDefault();
 
   console.log('teste')
 
@@ -99,10 +88,15 @@ function validacao() {
   let campoEmail = inputsCampos[1]
   let campoTelefone = inputsCampos[2]
   let campoTexto = textarea[0]
+  let campoEntrega = inputsCampos[3]
+  let campoInstalacao = inputsCampos[4]
   let campoEndereco = inputsCampos[5]
   let arroba = '@'
   let temArromba = campoEmail.value.includes(arroba)
-  let eValido = true
+  let eValido = true;
+  let entrega = ''
+  let primeiraOpcao = servicos[0].checked
+  let segundaOpcao = servicos[1].checked
 
   if (campoNome.value.length === 0) {
     eValido = false
@@ -137,6 +131,13 @@ function validacao() {
     campoTexto.classList.add('valid')
   }
 
+  if (!primeiraOpcao && !segundaOpcao) {
+    eValido = false
+    styleAlert.style.display = 'block'
+  } else {
+    styleAlert.style.display = 'none'
+  }
+
   if (campoEndereco.value.length === 0) {
     eValido = false
     campoEndereco.classList.add('invalid')
@@ -146,7 +147,35 @@ function validacao() {
     campoEndereco.classList.add('valid')
   }
 
-  if (!eValido) {
+  if (eValido) {
+
+    if (primeiraOpcao) {
+      entrega = 'Somente entrega'
+    } else {
+      entrega = 'Entrega e instalação'
+    }
+
+    const request = await fetch("http://localhost:3000/email", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(
+        {
+          email: campoEmail.value,
+          nome: campoNome.value,
+          telefone: campoTelefone.value,
+          ideia: campoTexto.value,
+          entrega: entrega,
+          endereco: campoEndereco.value
+
+        })
+    })
+    const response = await request.json();
+    alert(response.data);
+
+    alert('TUDO VALIDADO')
+  } else {
     swal({
       title: "Ops",
       text: "Existem campos a serem preenchidos!",
@@ -158,11 +187,10 @@ function validacao() {
   //VALIDAÇÃO DE EMAIL
 
   if (temArromba) {
-    campoEmail.classList.add('invalid')
-    campoEmail.classList.remove('valid')
+    campoEmail.classList.add('valid')
+    campoEmail.classList.remove('invalid')
   }
 
-  //
 
 }
 
