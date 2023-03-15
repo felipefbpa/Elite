@@ -111,6 +111,9 @@ async function validacao(event) {
     eValido = false
     campoEmail.classList.add('invalid')
     campoEmail.classList.remove('valid')
+  } else {
+    campoEmail.classList.add('valid')
+    campoEmail.classList.remove('invalid')
   }
 
   if (campoTelefone.value.length === 0) {
@@ -172,23 +175,19 @@ async function validacao(event) {
         })
     })
     const response = await request.json();
-    alert(response.data);
-
-    alert('TUDO VALIDADO')
+    swal({
+      title: "Enviado com sucesso",
+      text: "Recebemos seu email, em breve retornamos!",
+      icon: "success",
+      button: "Entendi",
+    });
   } else {
     swal({
       title: "Ops",
       text: "Existem campos a serem preenchidos!",
       icon: "error",
-      button: "OK",
+      button: "Entendi",
     });
-  }
-
-  //VALIDAÇÃO DE EMAIL
-
-  if (temArromba) {
-    campoEmail.classList.add('valid')
-    campoEmail.classList.remove('invalid')
   }
 
 
