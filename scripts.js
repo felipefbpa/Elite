@@ -91,6 +91,7 @@ async function validacao(event) {
   let campoEntrega = inputsCampos[3]
   let campoInstalacao = inputsCampos[4]
   let campoEndereco = inputsCampos[5]
+  let campoArquivos = inputsCampos[6]
   let arroba = '@'
   let temArromba = campoEmail.value.includes(arroba)
   let eValido = true;
@@ -158,21 +159,29 @@ async function validacao(event) {
       entrega = 'Entrega e instalação'
     }
 
+    const formData = new FormData();
+    formData.append('nome', campoNome.value)
+    formData.append('email', campoEmail.value)
+    formData.append('telefone', campoTelefone.value)
+    formData.append('ideia', campoTexto.value)
+    formData.append('entrega', entrega)
+    formData.append('endereco', campoEndereco.value)
+    formData.append('arquivos', campoArquivos.files[0])
+    formData.append('arquivos', campoArquivos.files[1])
+    formData.append('arquivos', campoArquivos.files[2])
+    formData.append('arquivos', campoArquivos.files[3])
+    formData.append('arquivos', campoArquivos.files[4])
+    formData.append('arquivos', campoArquivos.files[5])
+    formData.append('arquivos', campoArquivos.files[6])
+    formData.append('arquivos', campoArquivos.files[7])
+    formData.append('arquivos', campoArquivos.files[8])
+    formData.append('arquivos', campoArquivos.files[9])
+    formData.append('arquivos', campoArquivos.files[10])
+    formData.append('arquivos', campoArquivos.files[11])
+
     const request = await fetch("http://localhost:3000/email", {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(
-        {
-          email: campoEmail.value,
-          nome: campoNome.value,
-          telefone: campoTelefone.value,
-          ideia: campoTexto.value,
-          entrega: entrega,
-          endereco: campoEndereco.value
-
-        })
+      body: formData
     })
     const response = await request.json();
     swal({
