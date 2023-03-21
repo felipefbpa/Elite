@@ -179,7 +179,7 @@ async function validacao(event) {
     formData.append('arquivos', campoArquivos.files[10])
     formData.append('arquivos', campoArquivos.files[11])
 
-    const request = await fetch("129.148.41.158:3000/email", {
+    const request = await fetch("http://api.elitecomvisual.com.br:3000/email", {
       method: 'POST',
       body: formData
     })
